@@ -1,59 +1,53 @@
-# Eportfolio
+# Portfolio — Axel Varlot
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
+Portfolio personnel développé avec Angular. Il présente mon parcours (formation, expériences), mes compétences et une section projets.
 
-## Development server
+## Fonctionnalités
+- Navigation multi-pages (Formation, Expériences, Portfolio, Compétences, Contact)
+- Mise en page responsive
+- Animations d’apparition / transitions (selon les sections)
+- Gestion d’assets (logos, images)
 
-To start a local development server, run:
+## Stack technique
+- Angular
+- TypeScript
+- HTML / SCSS
 
+## Prérequis
+- Node.js (version LTS recommandée)
+- npm
+
+## Installation
 ```bash
-ng serve
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+## Lancer en local
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Puis ouvrir :
+- http://localhost:4200
 
+## Build (production)
 ```bash
-ng generate --help
+npm run build
 ```
+## Structure du projet (indicative)
+- `src/` : code source Angular
+  - `src/app/` : composants, pages, routing
+    - `src/app/core/` : éléments “core” (layout, navbar, services, etc.)
+    - `src/app/features/` : pages/sections (formation, experiences, etc.)
+  - `src/styles.scss` : styles globaux
+  - `src/index.html` : page racine
+- `public/` : ressources statiques servies telles quelles
+  - `public/images/` : logos & images
 
-## Building
+## Auteur
+Axel Varlot  
+- LinkedIn : https://www.linkedin.com/in/axel-varlot-b23550253/
+- Email : ozanvarlot@outlook.fr
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Licence
+Projet personnel — reproduction ou réutilisation non autorisée sans accord.
