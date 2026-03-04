@@ -1,0 +1,134 @@
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.education-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 0;
+}
+
+.education1,
+.education2,
+.education3 {
+  display: grid;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3rem);
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: #f7f7f7;
+  border: 1px solid #e7e7e7;
+}
+
+.education1,
+.education3 {
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+
+.education2 {
+  grid-template-columns: minmax(0, 1fr) 220px;
+}
+
+.logoEducation {
+  width: 220px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.logoEducation img {
+  display: block;
+  max-width: 100%;
+  max-height: 130px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.textEducation {
+  max-width: 760px; 
+}
+
+.education2 .textEducation {
+  margin-left: auto; 
+}
+
+.textEducation p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 70ch; 
+}
+
+@media (max-width: 900px) {
+  .education1,
+  .education2,
+  .education3 {
+    grid-template-columns: 1fr;
+    text-align: left;
+    padding: 1.25rem;
+  }
+
+  .education2 .logoEducation {
+    order: -1;
+  }
+
+  .logoEducation {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .logoEducation img {
+    max-height: 90px;
+  }
+
+  .textEducation,
+  .education2 .textEducation {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .textEducation p {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(4px);
+  animation: educationFadeUp 0.8s ease forwards;
+  will-change: transform, opacity, filter;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 0.7s;
+}
+
+.delay-3 {
+  animation-delay: 0.9s;
+}
+
+@keyframes educationFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}

@@ -1,0 +1,42 @@
+.home-hero {
+  margin-top: 2rem;
+}
+
+.home-content {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-img img {
+    border-radius: 100px;
+    width:250px;
+    height: auto;
+    display: block;
+}
+
+.home-hero-content {
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* Apparition globale après 0.5s */
+.reveal-all {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
