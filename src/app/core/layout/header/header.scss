@@ -5,7 +5,7 @@
 
 
 .site-header {
-    position:static;
+    position:relative;
     top: 0;
     background: var(--color-surface);
     border-bottom: 1px solid #eee;
@@ -30,12 +30,10 @@
 /* Logo cliquable */
 .logo {
     display: block;
-    /* IMPORTANT */
     width: 62px;
     height: 92px;
 
     background-image: url('/images/logo-AV.png');
-    /* ou .jpg selon ton fichier */
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
