@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="detail-body" *ngIf="project; else notFound">
-        <a class="back reveal delay-1" routerLink="/portfolio">
+        <a class="back reveal delay-1" (click)="goBack()">
             <h4>← Retour</h4>
         </a>
 

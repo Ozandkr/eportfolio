@@ -146,3 +146,40 @@
         min-width: 0;
     }
 }
+
+.related-projects {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.related-projects h4 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #374151;
+    font-weight: 600;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #1f2a44;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.project-links a:hover {
+    transform: translateY(-2px);
+    background: #1f2a44;
+    color: #ffffff;
+}

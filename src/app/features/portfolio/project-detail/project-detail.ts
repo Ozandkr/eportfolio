@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { PROJECTS, Project } from '../projects';
 
@@ -13,10 +13,14 @@ import { PROJECTS, Project } from '../projects';
 export class ProjectDetail implements OnInit {
   project?: Project;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.project = PROJECTS.find(p => p.id === id) ?? undefined;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
