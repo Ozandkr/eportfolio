@@ -1,115 +1,175 @@
 .portfolio-body {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 32px 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px;
 }
 
 .notion-grid {
-    list-style: none;
-    padding: 0;
-    margin: 24px 0 0;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
 
-    display: grid;
-    gap: 18px;
+  display: grid;
+  gap: 18px;
 
-    grid-template-columns: repeat(auto-fill, 320px);
-    justify-content: center;
+  grid-template-columns: repeat(auto-fill, 320px);
+  justify-content: center;
 }
 
 @media (max-width: 360px) {
-    .notion-grid {
-        grid-template-columns: 1fr;
-        justify-content: stretch;
-    }
+  .notion-grid {
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+  }
 }
 
 .notion-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 
-    border-radius: 14px;
-    overflow: hidden;
+  border-radius: 14px;
+  overflow: hidden;
 
-    background: var(--color-surface);
-    border: 1px solid #eee;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+  background: var(--color-surface);
+  border: 1px solid #eee;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 
-    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
 
 .notion-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
-    border-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .cover {
-    height: 140px;
-    background: rgba(255, 255, 255, 0.55);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .title {
-    padding: 12px 14px 14px;
-    background: var(--color-surface);
-    color: #1f2937;
-    font-size: 16px;
-    line-height: 1.25;
+  padding: 12px 14px 14px;
+  background: var(--color-surface);
+  color: #1f2937;
+  font-size: 16px;
+  line-height: 1.25;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .actions {
-    display: flex;
-    gap: 10px;
-    padding: 0 14px 14px;
-    justify-content: flex-start;
+  display: flex;
+  gap: 10px;
+  padding: 0 14px 14px;
+  justify-content: space-evenly;
 }
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 36px;
-    padding: 0 12px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 14px;
-    border: 1px solid transparent;
-    cursor: pointer;
-    white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn.primary {
-    background: #916654;
-    /* même accent que ton lien actif */
-    color: #fff;
+  background: #916654;
+  /* même accent que ton lien actif */
+  color: #fff;
 }
 
 .btn.primary:hover {
-    filter: brightness(0.95);
+  filter: brightness(0.95);
 }
 
 .btn.ghost {
-    //background: transparent;
-    background-color: #24292e;
-    color: white;
+  //background: transparent;
+  background-color: #24292e;
+  color: white;
 }
 
 .btn.ghost:hover {
-    border-color: rgba(0, 0, 0, 0.28);
+  border-color: rgba(0, 0, 0, 0.28);
+}
+
+.btn.tableau {
+  background: #1f4e79;
+  color: #fff;
+  border: 1px solid #1f4e79;
+}
+
+.btn.tableau:hover {
+  background: #173a5a;
+  border-color: #173a5a;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(31, 78, 121, 0.22);
+}
+
+/* Animation d'apparition des cartes portfolio */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(4px);
+  animation: portfolioFadeUp 0.8s ease forwards;
+  will-change: opacity, transform, filter;
+}
+
+.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.delay-2 {
+  animation-delay: 0.3s;
+}
+
+.delay-3 {
+  animation-delay: 0.45s;
+}
+
+.delay-4 {
+  animation-delay: 0.6s;
+}
+
+.delay-5 {
+  animation-delay: 0.75s;
+}
+
+.delay-6 {
+  animation-delay: 0.9s;
+}
+
+@keyframes portfolioFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }

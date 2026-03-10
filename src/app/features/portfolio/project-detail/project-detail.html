@@ -1,20 +1,19 @@
 <div class="main-container">
     <div class="detail-body" *ngIf="project; else notFound">
-        <a class="back" routerLink="/portfolio">
+        <a class="back reveal delay-1" routerLink="/portfolio">
             <h4>← Retour</h4>
         </a>
 
         <h2 class="reveal delay-1">{{ project.title }}</h2>
         <p class="intro reveal delay-2" *ngIf="project.intro">{{ project.intro }}</p>
 
-        <!-- LIGNE : image à gauche / technologies à droite -->
         <div class="top-row reveal delay-3">
             <div class="hero" *ngIf="project.image">
                 <img [src]="project.image" [alt]="project.title">
             </div>
 
             <aside class="tech-card" *ngIf="project.tech?.length || project.githubUrl">
-                <h3>Technologies</h3>
+                <h3>Compétences et outils utilisées</h3>
 
                 <div class="chips" *ngIf="project.tech?.length">
                     <span class="chip" *ngFor="let t of project.tech">{{ t }}</span>
@@ -24,12 +23,18 @@
                     rel="noopener">
                     Voir le code
                 </a>
+                <a class="btn tableau" *ngIf="project.dashboardUrl" [href]="project.dashboardUrl" target="_blank"
+                    rel="noopener noreferrer">
+                    Voir le dashboard
+                </a>
             </aside>
         </div>
 
-        <section class="section reveal delay-4" *ngIf="project.description">
-            <h3>Description</h3>
-            <p>{{ project.description }}</p>
+        <section class="section reveal delay-4" *ngIf="project.description?.length">
+            <h3>Description du projet</h3>
+            <p *ngFor="let paragraph of project.description">
+                {{ paragraph }}
+            </p>
         </section>
 
         <section class="section reveal delay-5" *ngIf="project.learned?.length">
@@ -38,7 +43,8 @@
                 <li *ngFor="let item of project.learned">{{ item }}</li>
             </ul>
         </section>
-        <section class="section" *ngIf="project.codeShots?.length">
+
+        <section class="section reveal delay-6" *ngIf="project.codeShots?.length">
             <h3>Extraits de code</h3>
 
             <div class="shot-grid">

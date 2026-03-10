@@ -8,7 +8,7 @@
                         <img *ngIf="p.image" [src]="p.image" [alt]="p.title">
                     </div>
 
-                    <div class="title">{{ p.title }}</div>
+                    <div class="title"><b>{{ p.title }}</b></div>
 
                     <div class="actions">
                         <a class="btn primary" [routerLink]="['/portfolio', p.id]">
@@ -17,6 +17,10 @@
 
                         <a class="btn ghost" *ngIf="p.githubUrl" [href]="p.githubUrl" target="_blank" rel="noopener">
                             Voir le code
+                        </a>
+                        <a class="btn tableau" *ngIf="p.dashboardUrl" [href]="p.dashboardUrl" target="_blank"
+                            rel="noopener noreferrer">
+                            Voir le dashboard
                         </a>
                     </div>
                 </div>

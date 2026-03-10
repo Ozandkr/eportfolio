@@ -1,0 +1,131 @@
+:host {
+    display: block;
+}
+
+.contact-body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 32px 16px 48px;
+}
+
+.contact-body h2 {
+    font-size: 34px;
+    line-height: 1.15;
+    margin: 6px 0 10px;
+    color: #1f2937;
+}
+
+.intro {
+    max-width: 760px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #374151;
+    opacity: 0.9;
+    margin-bottom: 28px;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: stretch;
+}
+
+.contact-card {
+    flex: 1 1 300px;
+    min-width: 280px;
+    background: #e7ddd1;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+}
+
+.contact-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #1f2937;
+}
+
+.contact-card p {
+    margin: 0 0 18px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #374151;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    padding: 0.82rem 1.15rem;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 0.96rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.97;
+}
+
+.contact-btn.primary {
+    background: #1f2a44;
+    color: #fff;
+}
+
+.contact-btn.secondary {
+    background: #9b6b52;
+    color: #fff;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+    animation: contactFadeUp 0.8s ease forwards;
+    will-change: transform, opacity, filter;
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 0.7s;
+}
+
+.delay-3 {
+    animation-delay: 0.9s;
+}
+
+@keyframes contactFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .contact-card {
+        min-width: 0;
+    }
+}

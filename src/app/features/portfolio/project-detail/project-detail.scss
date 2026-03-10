@@ -80,29 +80,39 @@
 }
 
 .btn.primary {
-    background: #5b21b6;
+    background: #24292e;
     color: #fff;
+}
+
+.btn.tableau {
+  background: #1f4e79;
+  color: #fff;
+  border: 1px solid #1f4e79;
+}
+
+.btn.tableau:hover {
+  background: #173a5a;
+  border-color: #173a5a;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(31, 78, 121, 0.22);
 }
 
 /* Sections dessous */
 .section {
-    margin-top: 22px;
+    margin-top: 18px;
 }
 
 .section h3 {
     margin-bottom: 10px;
 }
 
-/* Responsive : en colonne sur petit écran */
-@media (max-width: 900px) {
-    .top-row {
-        flex-direction: column;
-    }
+.section p {
+    margin: 0 0 1rem;
+    line-height: 1.7;
+}
 
-    .tech-card {
-        flex: 1 1 auto;
-        width: 100%;
-    }
+.section p:last-child {
+    margin-bottom: 0;
 }
 
 /* Sobriété : tailles + couleurs + espacement */
@@ -128,18 +138,19 @@
     color: #374151;
 }
 
-.section {
-    margin-top: 18px;
-}
-
+/* Extraits de code en flex */
 .shot-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 14px;
     margin-top: 10px;
+    align-items: flex-start;
 }
 
 .shot {
+    flex: 1 1 420px;
+    min-width: 320px;
+    max-width: 100%;
     margin: 0;
     border: 1px solid #eee;
     border-radius: 12px;
@@ -159,4 +170,67 @@
     color: #6b7280;
     background: var(--color-surface);
     border-top: 1px solid #eee;
+}
+
+/* Responsive : en colonne sur petit écran */
+@media (max-width: 900px) {
+    .top-row {
+        flex-direction: column;
+    }
+
+    .tech-card {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .shot {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(4px);
+    animation: projectDetailFadeUp 0.8s ease forwards;
+    will-change: transform, opacity, filter;
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 0.7s;
+}
+
+.delay-3 {
+    animation-delay: 0.9s;
+}
+
+.delay-4 {
+    animation-delay: 1.1s;
+}
+
+.delay-5 {
+    animation-delay: 1.3s;
+}
+
+.delay-6 {
+    animation-delay: 1.5s;
+}
+
+@keyframes projectDetailFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
 }
