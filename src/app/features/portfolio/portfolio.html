@@ -1,0 +1,27 @@
+<div class="main-container">
+    <div class="portfolio-body">
+        <ul class="notion-grid">
+            <li *ngFor="let p of projects; trackBy: trackById; let i = index" [class]="'reveal delay-' + ((i % 6) + 1)">
+
+                <div class="notion-card">
+                    <div class="cover" [class.has-image]="!!p.image">
+                        <img *ngIf="p.image" [src]="p.image" [alt]="p.title">
+                    </div>
+
+                    <div class="title">{{ p.title }}</div>
+
+                    <div class="actions">
+                        <a class="btn primary" [routerLink]="['/portfolio', p.id]">
+                            En savoir plus
+                        </a>
+
+                        <a class="btn ghost" *ngIf="p.githubUrl" [href]="p.githubUrl" target="_blank" rel="noopener">
+                            Voir le code
+                        </a>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
