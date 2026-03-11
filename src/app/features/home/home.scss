@@ -6,23 +6,45 @@
   max-width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  gap: 48px;
+  padding: 24px 32px 40px;
+}
+
+.home-img {
+  flex: 0 0 auto;
 }
 
 .home-img img {
-    border-radius: 100px;
-    width:250px;
-    height: auto;
-    display: block;
+  border-radius: 100px;
+  width: 250px;
+  height: auto;
+  display: block;
 }
 
 .home-hero-content {
   display: flex;
-  align-items:center;
+  align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
+  max-width: 700px;
 }
 
-/* Apparition globale après 0.5s */
+#hero-name {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.introduction {
+  max-width: 560px;
+}
+
+.introduction p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+
 .reveal-all {
   opacity: 0;
   transform: translateY(12px);
@@ -38,5 +60,96 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .home-content {
+    gap: 28px;
+    padding: 24px 20px 32px;
+  }
+
+  .home-img img {
+    width: 220px;
+    border-radius: 80px;
+  }
+
+  #hero-name {
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  .introduction {
+    max-width: 480px;
+  }
+
+  .introduction p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-hero {
+    margin-top: 1rem;
+  }
+
+  .home-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    padding: 20px 18px 28px;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: min(78vw, 280px);
+    border-radius: 70px;
+    margin: 0 auto;
+  }
+
+  .home-hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #hero-name {
+    font-size: clamp(2.8rem, 12vw, 4.6rem);
+    line-height: 0.95;
+    margin-bottom: 16px;
+  }
+
+  .introduction {
+    max-width: 100%;
+  }
+
+  .introduction p {
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-content {
+    padding: 18px 14px 24px;
+    gap: 18px;
+  }
+
+  .home-img img {
+    width: min(82vw, 250px);
+    border-radius: 56px;
+  }
+
+  #hero-name {
+    font-size: clamp(2.4rem, 14vw, 3.7rem);
+    margin-bottom: 12px;
+  }
+
+  .introduction p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 14px;
   }
 }

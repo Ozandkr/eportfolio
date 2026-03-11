@@ -46,11 +46,6 @@
     white-space: nowrap;
 }
 
-social a img {
-    width: 62px;
-    height: 92px;
-}
-
 .links {
     display: flex;
     gap: 14px;
@@ -67,4 +62,125 @@ social a img {
 .links a.active {
     font-weight: 600;
     border-bottom: 2px solid #5b21b6;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .logo {
+    width: 52px;
+    height: 72px;
+    flex: 0 0 auto;
+  }
+
+  .links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+  }
+
+  .links a {
+    font-size: 0.95rem;
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex: 0 0 auto;
+  }
+
+  .social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social a img,
+  .social-icon {
+    width: 32px !important;
+    height: 32px !important;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .logo {
+    width: 46px;
+    height: 62px;
+  }
+
+  .links {
+    width: 100%;
+    justify-content: center;
+    gap: 8px 12px;
+  }
+
+  .links li {
+    display: flex;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+    line-height: 1.2;
+    padding: 2px 0;
+    white-space: nowrap;
+  }
+
+  .social {
+    gap: 12px;
+  }
+
+  .social a img,
+  .social-icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    padding: 10px 12px;
+  }
+
+  .links {
+    gap: 8px 10px;
+  }
+
+  .links a {
+    font-size: 0.82rem;
+  }
+
+  .logo {
+    width: 42px;
+    height: 56px;
+  }
+
+  .social a img,
+  .social-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
 }
